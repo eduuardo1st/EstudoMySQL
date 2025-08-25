@@ -32,21 +32,30 @@ select * from livro;
 
 CREATE  table Autor.pessoa (
 	ID_pessoa int not null auto_increment,
+    CPF decimal(11) unique not null,
     nome varchar(255) not null,
-    Data_emprestimo date not null,
-    Data_devolucao date,
-    ISBN varchar (20) not null,
-    PRIMARY KEY (ID_pessoa),
-    CONSTRAINT FK_ISBNLivro
-    foreign key (ISBN) references Livro(ISBN)
-    on update cascade
-    on delete restrict
+    data_nasc date not null,
+    PRIMARY KEY (ID_pessoa)
 );
 
-INSERT INTO pessoa (nome, Data_emprestimo, Data_devolucao, ISBN)
-values ("Eduardo", '2025-05-23', '2025-06-15', "000000000000"),
-("Arthur", '2025-07-14', null, "212121312322123");
+INSERT INTO pessoa (nome, CPF, data_nasc)
+values ("Eduardo", 11324432443, '2006-07-02'),
+("Arthur", 2123434234, '2003-05-22');
 
 select * from pessoa;
 
 DROP TABLE pessoa;
+
+create table Emprestimo (
+	ID int primary key auto_increment,
+    data_emprestimo timestamp not null
+		default current_timestamp,
+	data_devolucao timestamp,
+    ISBN_livro decimal(13) not null,
+    pessoa_id int not null,
+    CONSTRAINT FK_ISBNLivro
+		foreign key (ISBN_Livro) references Livro(ISBN)
+		on update cascade
+		on delete restrict,
+    foreign key (pessoa_id) references pessoa(ID_pessoa)
+);
