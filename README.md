@@ -54,13 +54,3 @@ Para utilizar os scripts SQL deste repositório, siga os passos abaixo:
 ## Contribuição
 
 Contribuições são bem-vindas! Se você tiver sugestões, melhorias ou encontrar algum problema, sinta-se à vontade para abrir uma *issue* ou enviar um *pull request*.
-
-
-
-
-
-## Licença
-
-Este projeto está licenciado sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes. (Nota: O arquivo LICENSE não está presente no repositório original, esta é uma sugestão de licença comum para projetos de código aberto.)
-
-
