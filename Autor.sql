@@ -83,30 +83,40 @@ CREATE TABLE Emprestimo (
 
 INSERT INTO Pessoa (CPF, Nome, Data_Nascimento) VALUES
 (11324432443, "Eduardo", "2006-07-02"),
-(2123434234, "Arthur", "2003-05-22");
+(2123434234, "Arthur", "2003-05-22"),
+(99887766544, "Maria", "2002-11-10");
 
 INSERT INTO Autor (Nome) VALUES
-("Davi"), ("Ana");
+("Davi"), 
+("Ana"),
+("João");
 
 INSERT INTO Livro (ISBN, Titulo, Ano, Editora, ID_Autor) VALUES
 ("212121312322123", "As aventuras de jefinho", 2025, "Editora A", 1),
-("000000000000", "IT", 2023, "Editora B", 2);
+("000000000000", "IT", 2023, "Editora B", 2),
+("1111111111111", "Banco de Dados para Iniciantes", 2024, "Editora C", 3);
 
 INSERT INTO Aluno (ID_Pessoa, Entrada, Ativo) VALUES
 (1, "2024-01-10", TRUE),
-(2, "2023-08-15", TRUE);
+(2, "2023-08-15", TRUE),
+(3, "2022-02-05", FALSE);
 
 INSERT INTO Curso (Nome) VALUES
-("Engenharia de Software"), ("Biblioteconomia");
+("Engenharia de Software"), 
+("Economia"),
+("Ciência da Computação");
 
 INSERT INTO Turma (Semestre, Codigo_Curso) VALUES
 ("2024/1", 1),
-("2024/2", 2);
+("2024/2", 2),
+("2025/1", 3);
 
 INSERT INTO Cursa (Matricula_Aluno, Codigo_Turma) VALUES
 (1, 1),
-(2, 2);
+(2, 2),
+(3, 3);
 
 INSERT INTO Emprestimo (ISBN_Livro, Matricula_Aluno) VALUES
 ("212121312322123", 1),
-("000000000000", 2);
+("000000000000", 2),
+("1111111111111", 3);
